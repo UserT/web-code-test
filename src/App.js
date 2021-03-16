@@ -18,7 +18,7 @@ function App() {
           onItemSelected={
             (item) => (selectedItems.includes(item))
               ? setSelectedItems(selectedItems.map((selectedItem) => {
-                if (selectedItem.id !== item.id) return selectedItem;
+                if (selectedItem !== item) return selectedItem;
                 return Object.assign(selectedItem, { qty: selectedItem.qty + 1 })
               }))
               : setSelectedItems(selectedItems.concat(Object.assign(item, { qty:1 })))
@@ -31,7 +31,7 @@ function App() {
             return value !== item
             }))}
           updateQTY = {(itemNumber, qty) => setSelectedItems(selectedItems.map((selectedItem) => {
-            if (selectedItem.id !== itemNumber) return selectedItem;
+            if (selectedItem.itemNumber !== itemNumber) return selectedItem;
             return Object.assign(selectedItem, { qty: qty})
           }))} 
         />

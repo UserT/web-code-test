@@ -21,6 +21,7 @@ const BuyList = (props) => {
             key={item.itemNumber}
             onProductRemove={() => props.removeSeleted(item)}
             onQtyChange={props.updateQTY}
+            itemNumber={item.itemNumber}
             name={item.name}
             image={item.image}
             description={item.description}
